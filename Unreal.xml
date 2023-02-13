@@ -1,0 +1,79 @@
+<templateSet group="Unreal">
+  <template name="ulh" value="#pragma once&#10;&#10;#include &quot;Logging/LoggingMacros.h&quot;&#10;&#10;DECLARE_LOG_CATEGORY_EXTERN(Log$MODULE_NAME$, All, All)" description="Declare a module-level log category in a module-private header (e.g. Source/ProjectCore/Private/Log.h)" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE_NAME" expression="regularExpression(filePath(), &quot;.*\\\\Source\\\\(.*)\\\\(?:Private|Public)\\\\.*&quot;, &quot;$1&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="CSS" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="Handlebars" value="false" />
+      <option name="JADE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="Properties" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="Vue" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ulc" value="#include &quot;Log.h&quot;&#10;&#10;DEFINE_LOG_CATEGORY(Log$MODULE_NAME$);" description="Define a module-level log category in a cpp file (e.g. Source/ProjectCore/Private/Log.cpp)" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE_NAME" expression="regularExpression(filePath(), &quot;.*\\\\Source\\\\(.*)\\\\(?:Private|Public)\\\\.*&quot;, &quot;$1&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="CSS" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="Handlebars" value="false" />
+      <option name="JADE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="Properties" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="Vue" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+  <template name="ull" value="UE_LOG(Log$MODULE_NAME$, $VERBOSITY$, TEXT(&quot;$MESSAGE$&quot;));&#10;" description="Write a single UE_LOG line using the module-level log category" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE_NAME" expression="regularExpression(filePath(), &quot;.*\\\\Source\\\\(.*)\\\\(?:Private|Public)\\\\.*&quot;, &quot;$1&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="VERBOSITY" expression="enum(&quot;Log&quot;,&quot;Display&quot;, &quot;Warning&quot;, &quot;Error&quot;, &quot;Fatal&quot;)" defaultValue="Log" alwaysStopAt="true" />
+    <variable name="MESSAGE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="ANY_OPENAPI_JSON_FILE" value="false" />
+      <option name="ANY_OPENAPI_YAML_FILE" value="false" />
+      <option name="CSS" value="false" />
+      <option name="ECMAScript6" value="false" />
+      <option name="GENERAL_JSON_FILE" value="false" />
+      <option name="GENERAL_YAML_FILE" value="false" />
+      <option name="HTML" value="false" />
+      <option name="HTTP_CLIENT_ENVIRONMENT" value="false" />
+      <option name="Handlebars" value="false" />
+      <option name="JADE" value="false" />
+      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JSON" value="false" />
+      <option name="OTHER" value="true" />
+      <option name="Properties" value="false" />
+      <option name="REQUEST" value="false" />
+      <option name="SHELL_SCRIPT" value="false" />
+      <option name="SQL" value="false" />
+      <option name="TypeScript" value="false" />
+      <option name="Vue" value="false" />
+      <option name="XML" value="false" />
+    </context>
+  </template>
+</templateSet>
